@@ -4,4 +4,8 @@
 # to demonstrate python
 # Created by Hunter Evans on 01/11/22
 
-print('Hello World') 
+# Prompt for name
+user_name = input("What is your name: ")
+
+# Say Hello to name
+print('Hello ' + user_name) 
