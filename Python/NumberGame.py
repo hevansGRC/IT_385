@@ -18,9 +18,6 @@ def user_guess_prompt():
     global user_guess
     user_guess = int(input("I have chosen a number between 1 and 10. What is your guess: "))
 
-# Call user_guess_prompt function
-user_guess_prompt()
-
 # Functions for checking user_guess 
 def incorrect_answer():
     if answer > user_guess:
@@ -33,6 +30,9 @@ def correct_answer():
     if answer == user_guess:
         print("Congratulations human, you have beaten me. {0} was the correct answer.\nUntil next time...".format(answer))
 
+# Start loop
+# Call user_guess_prompt function
+user_guess_prompt()
 # Check answer
 while answer != user_guess:
     incorrect_answer()
