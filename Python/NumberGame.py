@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Week 3 Activity - Program a number game
 # Generate a random number between 1 - 10
 # Prompt user for a number between 1 -10
@@ -16,7 +17,7 @@ answer=random.randint(1,10)
 # Functions for prompting the user for an answer
 def user_guess_prompt():
     global user_guess
-    user_guess = int(input("I have chosen a number between 1 and 10. What is your guess: "))
+    user_guess = int(input("I have chosen a number between 1 and 10. What is your guess human: "))
 
 # Functions for checking user_guess 
 def incorrect_answer():
