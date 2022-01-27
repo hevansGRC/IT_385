@@ -43,46 +43,46 @@ def default_passwd():
         default_passwd()
 
 # Input desired character var
-def choose_symbols():
+#def choose_symbols():
     user_choice = input("Would you like to use symbols and punctuation (yes/no): ")
     if user_choice == "yes":
-        user_var = string.punctuation
-        return user_var
+        user_symbols = string.punctuation
+        return user_symbols
     elif user_choice == "no":
         pass
     else:
         print("Please type either 'yes' or 'no'")
         choose_symbols()
 
-def choose_numbers():
+#def choose_numbers():
     user_choice = input("Would you like to use numbers (yes/no): ")
     if user_choice == "yes":
-        user_var = string.digits
-        return user_var
+        user_num = string.digits
+        return user_num
     elif user_choice == "no":
         pass 
     else:
         print("Please type either 'yes' or 'no'")
         choose_numbers()
 
-def choose_uppercase():
+#def choose_uppercase():
     user_choice = input("Would you like to use upper case letters (yes/no): ")
     if user_choice == "yes":
-        user_var = string.ascii_uppercase
-        return user_var
+        user_uppercase = string.ascii_uppercase
+        return user_uppercase
     elif user_choice == "no":
         pass
     else:
         print("Please type either 'yes' or 'no'")
         choose_uppercase()
 
-def choose_lowercase():
+#def choose_lowercase():
     user_choice = input("Would you like to use lower case case letters (yes/no): ")
     if user_choice == "yes":
-        user_var = string.ascii_lowercase
-        return user_var
+        user_lowercase = string.ascii_lowercase
+        return user_lowercase
     elif user_choice == "no":
-        pass 
+        pass
     else:
         print("Please type either 'yes' or 'no'")
         choose_lowercase()
@@ -90,10 +90,11 @@ def choose_lowercase():
 # Set passwd variables
 user_passwd_length = passwd_length()
 default_passwd()
-user_passwd_var = choose_symbols()
-user_passwd_var = choose_numbers() + user_passwd_var
-user_passwd_var = choose_uppercase() + user_passwd_var
-user_passwd_var = choose_lowercase() + user_passwd_var
+user_symbols = choose_symbols()
+user_num = choose_numbers()
+user_uppercase = choose_uppercase()
+user_lowercase = choose_lowercase()
+#user_passwd_var = add_user_var()
 
 #user_settings = var_set.translate({ord('):None})
 # Generate user_passwd function
