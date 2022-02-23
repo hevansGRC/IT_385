@@ -1,0 +1,27 @@
+#Inventory of 192.168.0.0 hosts
+
+[web1]
+192.168.0.111
+
+[web2]
+192.168.0.112
+
+[db1]
+192.168.0.121
+
+[db2]
+192.168.0.122
+
+[webservers]
+web1
+web2
+
+[dbservers]
+db1
+db2
+
+[allservers]
+web1
+web2
+db1
+db2
