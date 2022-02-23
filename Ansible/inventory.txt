@@ -1,5 +1,6 @@
 #Inventory of 192.168.0.0 hosts
 
+
 web1 ansible_host=192.168.0.111 
 web2 ansible_host=192.168.0.112 
 db1 ansible_host=192.168.0.121
@@ -19,4 +20,3 @@ dbservers
 
 [allservers:vars]
 ansible_user=justincase
-ansible_password=Password01
