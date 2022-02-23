@@ -2,7 +2,5 @@
 
 mkpasswd --method=sha-512
 RANDOM
-$6$1fv8bYvUeqsxcJ$qvwuOYgI1IpPLqYnBpzAZLl12TMO/bpToU87RCIvkc4Si3t7IA9iVpjbIBG32VNETiufOKn5JJWKGKlMkO.XK1
-
-ansible -i inventory.txt allservers ansible.builtin.user -a 'name=hunter password="$6$1fv8bYvUeqsxcJ$qvwuOYgI1IpPLqYnBpzAZLl12TMO/bpToU87RCIvkc4Si3t7IA9iVpjbIBG32VNETiufOKn5JJWKGKlMkO.XK1
-"' -b
+$6$yLmmOybextGzkSE.$sUa8UEzWhG7nI8hKIazTwkkwix8ST7UcrO5H5EisIZLdkjLdkpTxYmDNhhwBPrpSMleDiTNt5FEj5mDir0FWI1
+ansible -i inventory.txt allservers -m ansible.builtin.user -a 'name=hunter password="$6$yLmmOybextGzkSE.$sUa8UEzWhG7nI8hKIazTwkkwix8ST7UcrO5H5EisIZLdkjLdkpTxYmDNhhwBPrpSMleDiTNt5FEj5mDir0FWI1"' -b

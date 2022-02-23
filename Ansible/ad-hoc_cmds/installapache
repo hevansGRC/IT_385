@@ -1,0 +1,3 @@
+#install Apache webserver on web1 &web2
+
+ansible -i inventory.txt webservers -m apt -a "name=apache2 state=present" -b 
