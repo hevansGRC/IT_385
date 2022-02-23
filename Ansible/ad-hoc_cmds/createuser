@@ -1,0 +1,8 @@
+#create a new user on all servers
+
+mkpasswd --method=sha-512
+RANDOM
+$6$1fv8bYvUeqsxcJ$qvwuOYgI1IpPLqYnBpzAZLl12TMO/bpToU87RCIvkc4Si3t7IA9iVpjbIBG32VNETiufOKn5JJWKGKlMkO.XK1
+
+ansible -i inventory.txt allservers ansible.builtin.user -a 'name=hunter password="$6$1fv8bYvUeqsxcJ$qvwuOYgI1IpPLqYnBpzAZLl12TMO/bpToU87RCIvkc4Si3t7IA9iVpjbIBG32VNETiufOKn5JJWKGKlMkO.XK1
+"' -b
