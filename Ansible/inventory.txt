@@ -20,3 +20,4 @@ dbservers
 
 [allservers:vars]
 ansible_user=justincase
+ansible_password=Password01
