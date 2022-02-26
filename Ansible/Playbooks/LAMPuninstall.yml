@@ -1,0 +1,26 @@
+#Uninstall Apache2 and MariaDB on the respective servers
+
+---
+- name: Uninstall Apache2 on webservers
+  hosts: webservers
+  remote_user: justincase
+
+  tasks:
+  - name: uninstall Apache2
+    become: yes
+    become_user: root
+    apt:
+      name: apache2
+      state: absent
+
+- name: Install MariaDB on dbservers
+  hosts: dbservers
+  remote_user: root
+
+  tasks:
+  - name: install mariadb-client
+    become: yes
+    become_user: root
+    apt:
+      name: mariadb-client
+      state: absent
