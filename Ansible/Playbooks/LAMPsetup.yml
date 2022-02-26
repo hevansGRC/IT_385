@@ -9,7 +9,7 @@
   - name: install Apache2
     apt:
       name: apache2
-      state: latest
+      state: present
 
 - name: Install MariaDB on dbservers
   hosts: dbservers
@@ -19,4 +19,4 @@
   - name: install mariadb-client
     apt:
       name: mariadb-client
-      state: latest
+      state: present

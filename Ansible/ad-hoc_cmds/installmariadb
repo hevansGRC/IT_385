@@ -1,0 +1,3 @@
+#Install MariaDB on db1 & db2
+
+ansible -i inventory.txt dbservers -m apt -a "name=mariadb-client state=latest" -b 
