@@ -19,6 +19,6 @@ webservers
 dbservers
 
 [allservers:vars]
-ansible_user=justincase
+ansible_user=root
 ansible_password=Password01
 ansible_become_password=Password01
