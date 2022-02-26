@@ -1,0 +1,22 @@
+#Install Apache2 and MariaDB on the respective servers
+
+---
+- name: Install Apache2 on webservers
+  hosts: webservers
+  remote_user: root
+
+  tasks:
+  - name: install Apache2
+    apt:
+      name: apache2
+      state: latest
+
+- name: Install MariaDB on dbservers
+  hosts: dbservers
+  remote_user: root
+
+  tasks:
+  - name: install mariadb-client
+    apt:
+      name: mariadb-client
+      state: latest
