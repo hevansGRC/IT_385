@@ -3,6 +3,7 @@
   gather_facts: no
   tasks: 
   - name: Copy website to webserver
+    become: true
     ansible.builtin.copy:
-    src: /home/justincase/Downloads/duckfarmstatic
-    dst: /home/justincase/Websites
+    src: /home/justincase/Downloads/duckfarmstatic/
+    dst: /var/www/html/

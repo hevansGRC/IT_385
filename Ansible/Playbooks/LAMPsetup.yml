@@ -18,18 +18,18 @@
 
   tasks:
   - name: install Apache2
+    become: yes    
     ansible.builtin.apt:
-      name: mariadb-server
+      name: apache2
       state: latest
-    become: yes
 
 - name: Install MariaDB on dbservers
   hosts: dbservers
   remote_user: justincase
 
   tasks:
-  - name: install mariadb-client
+  - name: install mariadb-server
     apt:
-      name: mariadb-client
+      name: mariadb-server
       state: latest
     become: yes
