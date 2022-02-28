@@ -1,0 +1,12 @@
+---
+- name: Update Linux Servers
+  hosts: allservers
+  remote_user: justincase
+
+  tasks:
+  - name: update
+    become: yes
+    apt:
+      update_cache: true
+      force_apt_get: true      
+      

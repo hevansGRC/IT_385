@@ -1,26 +1,35 @@
 #Install Apache2 and MariaDB on the respective servers
 
 ---
+- name: Update Linux Servers
+  hosts: allservers
+  remote_user: justincase
+
+  tasks:
+  - name: update
+    become: yes
+    apt:
+      update_cache: true
+      force_apt_get: true  
+
 - name: Install Apache2 on webservers
   hosts: webservers
-  remote_user: root
+  remote_user: justincase
 
   tasks:
   - name: install Apache2
+    ansible.builtin.apt:
+      name: mariadb-server
+      state: latest
     become: yes
-    become_user: root
-    apt:
-      name: apache2
-      state: present
 
 - name: Install MariaDB on dbservers
   hosts: dbservers
-  remote_user: root
+  remote_user: justincase
 
   tasks:
   - name: install mariadb-client
-    become: yes
-    become_user: root
     apt:
       name: mariadb-client
-      state: present
+      state: latest
+    become: yes
