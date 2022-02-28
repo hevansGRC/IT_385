@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  gather_facts: no
+  tasks: 
+  - name: Copy website to webserver
+    ansible.builtin.copy:
+    src: /home/justincase/Downloads/duckfarmstatic
+    dst: /home/justincase/Websites

@@ -1,6 +1,7 @@
 #Inventory of 192.168.0.0 hosts
 
-
+CSR1 ansible_host=192.168.0.11
+CSR2 ansible_host=192.168.0.12
 web1 ansible_host=192.168.0.111 
 web2 ansible_host=192.168.0.112 
 db1 ansible_host=192.168.0.121
@@ -12,7 +13,11 @@ web2
 
 [dbservers]
 db1 
-db2 
+db2
+
+[routers]
+CSR1
+CSR2
 
 [allservers:children]
 webservers
@@ -22,3 +27,7 @@ dbservers
 ansible_user=justincase
 ansible_password=Password01
 ansible_become_password=Password01
+
+[routers:vars]
+ansible_user=cisco
+ansible_password=cisco
