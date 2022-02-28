@@ -1,16 +1,16 @@
 #Install Apache2 and MariaDB on the respective servers
 
 ---
-- name: Update Linux Servers
-  hosts: allservers
-  remote_user: justincase
-
-  tasks:
-  - name: update
-    become: yes
-    apt:
-      update_cache: true
-      force_apt_get: true  
+#- name: Update Linux Servers
+#  hosts: allservers
+#  remote_user: justincase
+#
+#  tasks:
+#  - name: update
+#    become: yes
+#    apt:
+#      update_cache: true
+#      force_apt_get: true  
 
 - name: Install Apache2 on webservers
   hosts: webservers
