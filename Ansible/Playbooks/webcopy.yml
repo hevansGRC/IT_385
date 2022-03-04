@@ -1,9 +1,11 @@
 ---
 - hosts: webservers
   gather_facts: no
+  remote_user: justincase
+
   tasks: 
   - name: Copy website to webserver
-    become: true
+    become: yes
     ansible.builtin.copy:
-    src: /home/justincase/Downloads/duckfarmstatic/
-    dst: /var/www/html/
+      src: /home/justincase/Downloads/duckfarmstatic/
+      dest: /var/www/html/
