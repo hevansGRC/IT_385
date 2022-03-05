@@ -31,3 +31,5 @@ ansible_become_password=Password01
 [routers:vars]
 ansible_user=cisco
 ansible_password=cisco
+ansible_network_os=ios
+ansible_become=cisco
