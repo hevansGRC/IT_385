@@ -1,0 +1,27 @@
+---
+- name: manage windows machines
+  hosts: windowsservers
+  remote_user: justincase
+
+  tasks: 
+  - name: create hevans user
+    ansible.windows.win_user:
+      name: hevans
+      password: RANDOM
+      state: present
+  
+  - name: install IIS web server
+    ansible.windows.win_feature: 
+      name: "web-server"
+      state: present
+      restart: no
+  
+  - name: Install 7-Zip
+    win_chocolatey:
+      name: 7zip
+      state: present
+  
+  - name: Update Windows
+    win_updates:
+      catagory_names: '*'
+      reboot: yes
