@@ -1,2 +1,9 @@
 ---
 # tasks file for roles/snmp
+
+- name: set community string
+  cisco.ios.ios_snmp_server:
+    config:
+      hosts:
+      - community_string: GRCRocks!
+        
