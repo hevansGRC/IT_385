@@ -1,5 +1,7 @@
 ---
 - hosts: routers
+  gather_facts: false
+  connection: local
   roles:
   - default-route
   - local-passwd
