@@ -1,39 +1,12 @@
 ---
 # tasks file for roles/backup-conf
 
-- name: backup ios routers
-  hosts: routers
-  gather_facts: no
-  connection: network_cli
+- name: print running conf
+  ios_command:
+    commands: show run
+  register: output_router
 
-  tasks:
-  - name: print running conf
-    ios_command:
-      commands: show run
-    register: output_router
-
-  - name: save conf
-    copy:
-      content: "{{ output_router.stdout[0] }}"
-      dest: "/home/justincase/Git/IT_385/iOS_backups/show_run_{{ inventory_hostname }}{{time.stdout}}.txt"
-
-- name: push to git
-  hosts: localhost
-
-  tasks:
-    - name: print time
-      command: date
-      register: time
-      changed_when: false
-      delegate_to: localhost
-      run_once: yes
-
-    - name: git commands
-      shell: |
-        git add .
-        git commit -m "Device Backup on {{time.stdout}} "
-        git push
-      args:
-        chdir: /home/justincase/Git/IT_385/iOS_backups
-      delegate_to: localhost
-      run_once: yes
+- name: save conf
+  copy:
+    content: "{{ output_router.stdout[0] }}"
+    dest: "/home/justincase/Git/IT_385/iOS_backups/show_run_{{ inventory_hostname }}{{time.stdout}}.txt"
