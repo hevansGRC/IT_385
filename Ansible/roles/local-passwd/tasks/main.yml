@@ -1,7 +1,7 @@
 ---
 # tasks file for roles/local-passwd
 
-  - name: create static default route
+  - name: set local password
       ios_config: 
         lines:
         - line console 0

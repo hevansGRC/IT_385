@@ -1,12 +1,9 @@
 ---
 # tasks file for roles/ntp
 
-  tasks:
-  - name: change ntp server
-    - cisco.ios.ios_ntp:
-        server: 192.168.0.250
-        source_int: Gigabitethernet1
-        logging: false
-        state: present
+- name: change ntp server
+  ios_config:
+    lines:
+    - snmp-server community GRCRocks!
 
 
