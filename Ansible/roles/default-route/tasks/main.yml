@@ -1,0 +1,11 @@
+---
+# tasks file forroles/default-route
+
+- name: set static route
+  cisco.ios.ios_static_routes:
+    config:
+    - address_families:
+      - afi: ipv4
+        routes: 
+        - dest: 192.168.0.250
+          next_hops: 0.0.0.0
