@@ -1,4 +1,8 @@
 ---
 - hosts: routers
   roles:
-  - 
+  - default-route
+  - local-passwd
+  - ntp
+  - snmp
+  
